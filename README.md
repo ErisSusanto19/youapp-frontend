@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# YouApp Profile - Mobile Webapp
 
-## Getting Started
+A mobile web application for a technical test, implementing user registration, login, and profile management features. This project is built with Next.js and a modern frontend architecture.
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+-   [ ] User Registration and Login
+-   [ ] View Profile Details
+-   [ ] Update User Profile Details
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Tech Stack & Architecture
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+-   **Framework**: Next.js 13 (App Router)
+-   **Language**: TypeScript
+-   **Styling**: Tailwind CSS
+-   **State Management**: Zustand
+-   **Form Validation**: Zod & React Hook Form (To be implemented)
+-   **Architecture**: **Feature-Sliced Design (FSD)** to ensure clear separation of concerns and scalability.
+-   **Workflow**: **Git Flow** with feature branches and Pull Requests.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 📦 Getting Started
 
-## Learn More
+To run this project locally, follow these steps:
 
-To learn more about Next.js, take a look at the following resources:
+### 1. Prerequisites
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Make sure you have Node.js (v18+) and npm/yarn installed on your machine.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### 2. Instalation
 
-## Deploy on Vercel
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/ErisSusanto19/youapp-frontend
+    cd youapp-frontend
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+3.  **Setup environment variables:**
+    Crate a new file named `.env.local` in the project root and add the following variable.
+    ```env
+    NEXT_PUBLIC_API_URL=http://techtest.youapp.ai
+    ```
+
+4.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the application running. aplikasi berjalan.
