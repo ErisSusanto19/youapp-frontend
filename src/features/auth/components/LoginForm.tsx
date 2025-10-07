@@ -20,11 +20,16 @@ type LoginFormInputs = z.infer<typeof loginSchema>;
 
 export const LoginForm = () => {
     const router = useRouter();
-    const { setAuth, logout } = useUserStore((state) => state);
+    const { setAuth, logout } = useUserStore();
 
-    const { register, handleSubmit, setError, formState: {errors, isSubmitting} } = useForm<LoginFormInputs>({
+    const { register, handleSubmit, setError, formState: {errors, isSubmitting, isDirty} } = useForm<LoginFormInputs>({
         resolver: zodResolver(loginSchema),
-        mode: 'onChange'
+        mode: 'onChange',
+        defaultValues: {
+            email: '',
+            username: '',
+            password: ''
+        }
     })
 
     const onSubmit: SubmitHandler<LoginFormInputs> = async (data) => {
@@ -35,10 +40,11 @@ export const LoginForm = () => {
             setAuth(token, null)
 
             const profileData = await getProfile();
+            // console.log(profileData, '<<< cek from LoginForm');
 
             setAuth(token, profileData);
 
-            router.push("/")
+            router.push("/profile")
         } catch (error: any) {
             setError('root', {
                 type: 'manual',
@@ -81,7 +87,7 @@ export const LoginForm = () => {
             </div>
 
 
-            <Button type="submit" disabled={isSubmitting}>
+            <Button type="submit" disabled={!isDirty || isSubmitting}>
                 {isSubmitting ? (
                     <>
                         <Loader2 className="inline-block h-5 w-5 animate-spin mr-2"/>
