@@ -42,7 +42,7 @@ Make sure you have Node.js (v18+) and npm/yarn installed on your machine.
 3.  **Setup environment variables:**
     Crate a new file named `.env.local` in the project root and add the following variable.
     ```env
-    NEXT_PUBLIC_API_URL=http://techtest.youapp.ai
+    NEXT_PUBLIC_API_URL=https://techtest.youapp.ai
     ```
 
 4.  **Run the development server:**
