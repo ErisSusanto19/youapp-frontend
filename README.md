@@ -4,9 +4,9 @@ A mobile web application for a technical test, implementing user registration, l
 
 ## ✨ Features
 
--   [ ] User Registration and Login
--   [ ] View Profile Details
--   [ ] Update User Profile Details
+-   [X] User Registration and Login
+-   [x] View Profile Details
+-   [x] Update User Profile Details
 
 ## 🚀 Tech Stack & Architecture
 

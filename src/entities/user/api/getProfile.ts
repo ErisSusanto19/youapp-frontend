@@ -67,7 +67,6 @@ const profileResponseSchema = z.object({
 export const getProfile = async (): Promise<UserProfile> => {
     try {
         const response = await api.get(`/api/getProfile`)
-        // console.log(response, '<<< cek getProfile mentah');
         
         const validatedData = profileResponseSchema.parse(response.data);
         if(!validatedData.data){

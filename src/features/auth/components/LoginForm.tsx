@@ -40,7 +40,6 @@ export const LoginForm = () => {
             setAuth(token, null)
 
             const profileData = await getProfile();
-            // console.log(profileData, '<<< cek from LoginForm');
 
             setAuth(token, profileData);
 
