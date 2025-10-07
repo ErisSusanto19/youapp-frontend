@@ -14,7 +14,7 @@ const LoginPage = () => {
 
                 <div className="mt-8 text-center text-body">
                     <span>No account? </span>
-                    <Link href={"/login"} className="text-gold font-bold underline">
+                    <Link href={"/register"} className="text-gold font-bold underline">
                         Register here
                     </Link>
                 </div>

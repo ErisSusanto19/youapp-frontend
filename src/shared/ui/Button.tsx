@@ -15,6 +15,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                     hover:scale-105 hover:shadow-lg hover:shadow-teal-200/30 hover:from-teal-200 hover:to-blue-700
                     focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-background-dark focus:ring-teal-200
                     disabled:opacity-30 disabled:scale-100 disabled:cursor-default
+                    ${className}
                 `}
                 disabled={disabled}
                 ref={ref}

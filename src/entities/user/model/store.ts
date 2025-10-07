@@ -4,11 +4,15 @@ import { AuthState } from './type';
 
 export const useUserStore = create<AuthState>()(
     persist(
-        (set) => ({
+        (set, get) => ({
             profile: null,
             token: null,
             setAuth: (token, profile) => set({token, profile}),
-            logout: () => set({token: null, profile: null})
+            setProfile: (profile) => set({ profile }),
+            logout: () => {
+                set({token: null, profile: null})
+                localStorage.removeItem('youapp-auth-storage')
+            }
         }),
         {
             name: 'youapp-auth-storage',
@@ -16,3 +20,7 @@ export const useUserStore = create<AuthState>()(
         }
     )
 )
+
+export const logoutUser = () => {
+    useUserStore.getState().logout();
+}

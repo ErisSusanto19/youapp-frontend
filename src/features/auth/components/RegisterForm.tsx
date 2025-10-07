@@ -32,9 +32,15 @@ type RegisterFormInputs = z.infer<typeof registerSchema>;
 export const RegisterForm = () => {
     const router = useRouter();
 
-    const { register, handleSubmit, setError, formState: { errors, isSubmitting } } = useForm<RegisterFormInputs>({
+    const { register, handleSubmit, setError, formState: { errors, isSubmitting, isDirty } } = useForm<RegisterFormInputs>({
         resolver: zodResolver(registerSchema),
-        mode: "onChange"
+        mode: "onChange",
+        defaultValues: {
+            email: '',
+            username: '',
+            password: '',
+            confirmPassword: ''
+        }
     })
 
     const onSubmit: SubmitHandler<RegisterFormInputs> = async (data) => {
@@ -99,7 +105,7 @@ export const RegisterForm = () => {
                 {errors && <p className="text-red-500 text-xs mt-1">{errors.confirmPassword?.message}</p>}
             </div>
 
-            <Button type="submit" disabled={isSubmitting}>
+            <Button type="submit" disabled={!isDirty || isSubmitting}>
                 {isSubmitting ? (
                     <>
                         <Loader2 className="inline-block h-5 w-5 animate-spin mr-2"/>
